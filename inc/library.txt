@@ -1,0 +1,10 @@
+Gisue Inc...
+Started BY Bhagyesh Sunil Patel
+Project Name :Library Database
+Project Type:Web Application
+Language :Php
+Started Date : Wed Dec 24 12:35:57 PDT 2014
+Project Completed on : Sun Dec 28 21:05:51 PDT 2014
+Project Updated on : Wed Dec 31 13:10:37 PDT 2014
+
+More : Its Web Application for teaching Purpose...
