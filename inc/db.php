@@ -8,7 +8,7 @@ $dbname = 'library';
 $con = new mysqli($host, $user, $pass, $dbname);
 
 if ($con->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $con->connect_error);
 } else {
     //echo "Connected to MySQL server successfully!";
 }

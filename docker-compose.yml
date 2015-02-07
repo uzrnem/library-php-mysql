@@ -1,21 +1,16 @@
-#
-# THIS IS DEVELOPMENT COMPOSE FILE
-#
-
-#docker-compose -f docker-compose.yml up -d
+#docker-compose up -d
 version: '3.7'
 
 services:
   library:
-    build: .
+    image: php:8.0-apache
     container_name: library
     working_dir: /var/www/php
     volumes:
       - $PWD:/var/www/php
     ports:
       - 9035:9035
-    command: php -S 0.0.0.0:9035
-    # -t /var/www/php #tail -f /dev/null
+    command: sh -c "docker-php-ext-install mysqli && docker-php-ext-enable mysqli && php -S 0.0.0.0:9035"
     #php -S localhost:port -t your_folder/
     networks:
       - database_mysql
