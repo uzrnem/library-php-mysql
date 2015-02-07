@@ -12,8 +12,9 @@
 	if($count<=4)
 	{
 		header("location:book_want.php?e=Now You Cant Book Books");
+		die();
 	}
-	session_start();
+	
 	$user=$_SESSION["id"];
 	if ($con->query("UPDATE list SET status='Booked',user_id='".$user."' WHERE id=".$_GET["b"]))
 		header("location:book_want.php?e=Record updated successfully");

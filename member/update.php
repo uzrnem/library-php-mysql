@@ -2,8 +2,6 @@
 include '../inc/db.php';
 include '../inc/notmember.php';
 
-session_start();
-
 if($_GET["o"]=="a")
 {
 	session_start();

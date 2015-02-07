@@ -6,8 +6,8 @@ $Password=$_POST['ap'];
 if(strlen($Username)==0){header("index.php?a=1");}
 if(strlen($_POST['ap'])==0){header("index.php?a=2");}
 $sql = "select id from admin where username='".$Username."' and password='".$Password."'";
-$result = $con->query($sql,$con);
-$records = mysql_num_rows($result);
+$result = $con->query($sql);
+$records = $result->num_rows;
 $row = $result->fetch_assoc();
 if ($records==0)
 {

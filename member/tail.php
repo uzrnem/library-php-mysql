@@ -18,13 +18,14 @@
 				<h2>Wishlist</h2>
 				<ul>
 				<?php
-					$query="SELECT * FROM wishlist where user_id='".$_SESSION["id"]."'";
-					$result=$con->query($query);
-
-					while($row=$result->fetch_assoc())
+					$sql = "SELECT * FROM wishlist where user_id='".$_SESSION["id"]."'";
+					$result = $con->query($sql);
+					while($row= $result->fetch_assoc())
 					{	?> <li> <?php
 						$available=0;
-			        	if($arr=$con->fetch_assoc($con->query("SELECT * FROM book where id='".$row["book_id"]."'")))
+						$sqlSec = "SELECT * FROM book where id='".$row["book_id"]."'";
+						$resultSec = $con->query($sqlSec);
+						if($arr=$resultSec->fetch_assoc())
 			        	{
 							echo $arr["name"]."-".$arr["author"]."[".$arr["edition"]."](";
 						}

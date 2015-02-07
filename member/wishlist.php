@@ -26,7 +26,7 @@ include 'head.php';
 				  <tr>
 			        <td><?php echo $count; $count=$count+1; ?></td>
 					<?php
-					if($arr=$con->fetch_assoc($con->query("SELECT * FROM book where id='".$row["book_id"]."'"))){ ?>
+					if($arr=$con->query("SELECT * FROM book where id='".$row["book_id"]."'")->fetch_assoc()){ ?>
 					<td><?php echo $arr["name"]; ?></td>
 					<td><?php echo $arr["author"]; ?></td>
 					<td><?php echo $arr["edition"]; ?></td>

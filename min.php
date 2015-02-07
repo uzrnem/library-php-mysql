@@ -3,18 +3,21 @@ include './inc/db.php';
 
 $Username=$_POST['mu'];
 $Password=$_POST['mp'];
-if(strlen($Username)==0){header("index.php?m=1");}
-if(strlen($_POST['mp'])==0){header("index.php?m=2");}
+if (strlen($Username) == 0) {
+	header("index.php?m=1");
+	die();
+} else if( strlen($_POST['mp']) == 0 ) {
+	header("index.php?m=2");
+	die();
+}
 $sql = "select id from member where username='".$Username."' and password='".$Password."'";
 $result = $con->query($sql);
 $records = $result->num_rows;
 $row = $result->fetch_assoc();
-if ($records==0)
-{
+if ($records==0) {
 	header("location:index.php?m=3");
-}
-else
-{
+} else {
+	session_start();
 	$_SESSION["Username"]=$Username;
 	$_SESSION["class"]="member";
 	$_SESSION["id"]=$row["id"];

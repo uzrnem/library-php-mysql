@@ -1,2 +1,14 @@
 <?php
+	//session_start();
+	if(isset($_SESSION["Username"]))
+		{
+			if($_SESSION["class"]=="admin")
+			{
+				header("location:admin/index.php");
+			}
+			if($_SESSION["class"]=="member")
+			{
+				header("location:member/index.php");
+			}
+		}
 ?>
