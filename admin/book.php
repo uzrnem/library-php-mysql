@@ -54,7 +54,7 @@
 						    <th>Copies</th>
 						    </tr>
 
-							<?php while($row=mysql_fetch_row($result)){ ?>
+							<?php while($row=$result->num_rows){ ?>
 						    <tr>
 						    <td><?php echo $row[0]; ?></td>
 						    <td><?php echo $row[1]; ?></td>
